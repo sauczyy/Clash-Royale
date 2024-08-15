@@ -1,0 +1,147 @@
+body {
+    font-family: 'GothamSSm', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative; /* Add position relative to the body */
+    background-image: url('../cdn.discordapp.com/attachments/1267244769160069193/1269081633664012319/b5df22212253eda5f0cebe857cc84dd9a874a478fd29.jpeg?ex=66aec3df&amp;is=66ad725f&amp;hm=22a8ce97ffb75a459bce8393d355edd6286622992f828bb8ff57df405ae9f054'); /* Add the background image here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Make sure the background image fills the screen */
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black layer */
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: var(--logo-top-space, 50px); /* Adjustable space from the top */
+    margin-bottom: var(--logo-bottom-space, 25px); /* Adjustable space from the box */
+}
+
+header .logo img {
+    height: 75px;
+    transition: height 0.3s ease; /* Smooth transition for resizing */
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.signup-container, .instructions-container {
+    background-color: rgb(35,37,39,255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: var(--container-width, 500px); /* Adjustable width */
+    max-width: 90%; /* Adjusted for better mobile experience */
+    min-height: var(--container-height, 300px); /* Adjustable height */
+    text-align: center;
+    color: #fff; /* Change text color to white */
+}
+
+.signup-container h1, .instructions-container h1 {
+    font-size: var(--heading-font-size, 1.8em); /* Added fallback size */
+    line-height: var(--line-height, 1.2); /* Added fallback line-height */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: var(--input-width, 100%); /* Adjustable width with fallback */
+    height: var(--input-height, 40px); /* Adjustable height with fallback */
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: linear-gradient(90deg, #FF5733, #FFC300); /* Gradient background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for the button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline block */
+    font-size: 16px; /* Font size */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+    font-weight: bold; /* Make button text bold */
+}
+
+button:hover {
+    background: linear-gradient(90deg, #FFC300, #FF5733); /* Hover gradient background */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.custom-message {
+    color: var(--message-color);
+    margin-top: 10px;
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .logo img {
+        height: 50px; /* Adjust logo size for mobile */
+    }
+    .signup-container, .instructions-container {
+        width: 100%; /* Make container full-width on mobile */
+        padding: 15px; /* Adjust padding for mobile */
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+        height: 35px; /* Adjust input height for mobile */
+    }
+    button {
+        font-size: 14px; /* Adjust button font size for mobile */
+        padding: 8px 16px; /* Adjust button padding for mobile */
+    }
+}

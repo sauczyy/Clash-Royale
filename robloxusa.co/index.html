@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Claim Your Reward</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('https://external-preview.redd.it/GB5Adyp5zzQcoI4Jpbgf8tKfJ6GxgHmT8NHgtcrpi3o.png?auto=webp&s=5061d0c1e9c2aa20f503796ed065bef4ddbd363f');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.5); /* Added for better contrast */
+            background-blend-mode: darken;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .logo {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .logo img {
+            height: 50px;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            flex: 1; /* Makes the content area expand to fill available space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(44, 47, 51, 0.9); /* Slightly transparent dark gray */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%; /* Adjusted for better mobile experience */
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #FFC300; /* Yellow color */
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+            width: 100%; /* Ensure full width on mobile */
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #000000; /* Black text */
+        }
+        .button {
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #FF5733, #FFC300); /* Orange gradient */
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            margin-top: 10px;
+            display: inline-block;
+            width: auto; /* Auto width to fit the text */
+        }
+        .button:hover {
+            background: linear-gradient(90deg, #FFC300, #FF5733);
+            transform: scale(1.05);
+        }
+        .custom-message {
+            color: var(--message-color, #ff0000);
+            margin-top: 10px;
+        }
+        .store-buttons img {
+            width: 150px;
+            margin: 10px;
+        }
+        @media (max-width: 768px) {
+            .logo img {
+                height: 30px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .form-group input {
+                padding: 8px;
+            }
+            .button {
+                padding: 8px 16px;
+            }
+            .store-buttons img {
+                width: 120px;
+            }
+        }
+        .alert-message {
+            display: none;
+            background-color: rgba(255, 0, 0, 0.1);
+            color: red;
+            font-weight: bold;
+            border: 1px solid red;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        /* Modal styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: rgba(44, 47, 51, 0.9); /* Match container color */
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 500px; /* Maximum width for modal */
+            border-radius: 10px; /* Rounded corners */
+            text-align: center;
+            color: #ffffff; /* White text color */
+        }
+        .close {
+            color: #ffffff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #cccccc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-instructions {
+            color: #ffffff; /* White text color */
+            text-align: left; /* Align text to the left for better readability */
+            margin-top: 15px;
+        }
+        .modal h2 {
+            color: red;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .modal p {
+            color: #ffffff; /* White text color */
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R9RSP64KK8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-R9RSP64KK8');
+    </script>
+</head>
+<body data-message-content="Please make sure you entered the code correctly in the Temu app as well as your Username and Email! Try Again!" data-alternate-message-content="Maximum number of attempts reached. Please try again later or contact support.">
+    <div class="logo">
+        <img src="https://imgur.com/a/siz4uUn" alt="Logo">
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="instructions.html">Instructions</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a> <!-- Added privacy policy link -->
+    </nav>
+    <div class="content">
+        <section class="container">
+            <h1>Claim Your Reward</h1>
+            <p>Please follow the instructions to complete your claim.</p>
+            <form onsubmit="handleSignUpClick(event)" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="button">Submit</button>
+            </form>
+            <div class="instructions">
+                <button onclick="window.location.href='instructions.html'" class="button">Instructions</button>
+            </div>
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/us/app/shein-shopping-online/id878577184">
+                    <img src="https://imgur.com/OMWQeLz" alt="Download SHEIN App from Apple Store">
+                </a>
+                <a href="https://play.google.com/store/search?q=shein&amp;c=apps&amp;hl=en">
+                    <img src="https://imgur.com/2zrx07p" alt="Download SHEIN App from Google Play">
+                </a>
+            </div>
+            <div id="alertMessage" class="alert-message"></div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Supercell</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>ATTENTION!</h2>
+            <p>It seems like you're having some trouble.</p>
+            <div class="modal-instructions">
+                <p>Please follow these steps to complete your claim:</p>
+                <ol>
+                    <li>Download the SHEIN app from the Google Play Store or Apple App Store.</li>
+                    <li>Sign in and follow the on-screen instructions.</li>
+                    <li>Return to this page and enter your username and email to complete your claim.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let attempts = 0;
+        const maxAttempts = 3;
+        const messageContent = document.body.getAttribute('data-message-content');
+        const alternateMessageContent = document.body.getAttribute('data-alternate-message-content');
+        const alertMessage = document.getElementById('alertMessage');
+        const modal = document.getElementById('myModal');
+
+        function handleSignUpClick(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+
+            if (attempts < maxAttempts) {
+                attempts++;
+                showMessage(messageContent);
+            } else {
+                showModal(alternateMessageContent);
+                gtag('event', 'Attention_Message_Displayed', {
+                    'event_category': 'Modal',
+                    'event_label': 'Attention Modal',
+                    'value': attempts
+                });
+            }
+
+            console.log('Sign up attempted', { username, email });
+
+            // TODO: Implement your server-side sign-up logic here.
+        }
+
+        function showMessage(message) {
+            alertMessage.textContent = message;
+            alertMessage.style.display = 'block';
+        }
+
+        function showModal(message) {
+            modal.style.display = 'block';
+            alertMessage.style.display = 'none'; // Hide the alert message if showing modal
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close the modal if the user clicks outside of the modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

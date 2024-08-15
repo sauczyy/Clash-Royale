@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Claim Your Gems</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('https://external-preview.redd.it/GB5Adyp5zzQcoI4Jpbgf8tKfJ6GxgHmT8NHgtcrpi3o.png?auto=webp&s=5061d0c1e9c2aa20f503796ed065bef4ddbd363f');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #ffffff;
+            background-color: #2c2f33; /* Dark gray background */
+        }
+        .container {
+            background-color: rgba(44, 47, 51, 0.9); /* Slightly transparent dark gray */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            margin: 20px auto;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #FFC300; /* Yellow color */
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-item h2 {
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+            border-radius: 5px;
+            margin: 0;
+            transition: background-color 0.3s;
+            color: #ffffff;
+        }
+        .faq-item h2:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .faq-item .answer {
+            display: none;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+            color: #ffffff;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(90deg, #FF5733, #FFC300);
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: linear-gradient(90deg, #FFC300, #FF5733);
+            transform: scale(1.05);
+        }
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R9RSP64KK8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-R9RSP64KK8');
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const faqItems = document.querySelectorAll(".faq-item h2");
+            faqItems.forEach(item => {
+                item.addEventListener("click", function() {
+                    this.nextElementSibling.classList.toggle("show");
+                    if (this.nextElementSibling.classList.contains("show")) {
+                        this.nextElementSibling.style.display = "block";
+                    } else {
+                        this.nextElementSibling.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://imgur.com/a/siz4uUn" alt="Logo">
+        </div>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="instructions.html">Instructions</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <section class="container">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-item">
+                <h2>How do I claim my free Gems?</h2>
+                <div class="answer">
+                    <p>To claim your free Gems, follow these steps:</p>
+                    <ol>
+                        <li>Download the SHEIN app from the Google Play Store or Apple App Store.</li>
+                        <li>Open the app and search for the code 1bn7odbp.</li>
+                        <li>Sign in and claim your rewards.</li>
+                        <li>Return to the home screen and connect your username and email to receive your Gems.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h2>Is my reward higher if I download SHEIN and use the code on multiple devices with different numbers?</h2>
+                <div class="answer">
+                    <p>Using multiple devices with different phone numbers may increase your chances of receiving higher rewards. However, it is important to follow the terms and conditions of the promotion to ensure eligibility. Each device and phone number must be unique, and the app should be downloaded and used according to the provided instructions.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h2>What should I do if I don't receive my Gems after following the steps?</h2>
+                <div class="answer">
+                    <p>If you do not receive your Gems after completing the steps, please make sure you have entered the code correctly and followed all instructions. If the issue persists, try signing up on SHEIN with a different device and phone number. You can also contact our support team for further assistance.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h2>Can I use the code multiple times on the same device?</h2>
+                <div class="answer">
+                    <p>No, the code can only be used once per device. To increase your chances of earning more rewards, you will need to use different devices and phone numbers.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h2>How long does it take to receive my Gems after claiming?</h2>
+                <div class="answer">
+                    <p>After you have completed the steps and connected your username and email, it may take up to 24 hours for the Gems to be credited to your account. Please be patient and check your account after this period.</p>
+                </div>
+            </div>
+            <button onclick="window.location.href='index.html'" class="button">Redeem Now</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Supercell</p>
+    </footer>
+</body>
+</html>
